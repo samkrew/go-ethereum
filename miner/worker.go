@@ -478,7 +478,9 @@ func (self *worker) commitNewWork() {
 	}
 
 	// Log top tx
-	log.Info("Top tx", "hash", work.txs[0].Hash(), "gas price", work.txs[0].GasPrice())
+	if len(work.txs) > 0 {
+		log.Info("Top tx", "hash", work.txs[0].Hash(), "gas price", work.txs[0].GasPrice())
+	}
 
 	// Create the new block to seal with the consensus engine
 	if work.Block, err = self.engine.Finalize(self.chain, header, work.state, work.txs, uncles, work.receipts); err != nil {
