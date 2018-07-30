@@ -477,13 +477,8 @@ func (self *worker) commitNewWork() {
 		delete(self.possibleUncles, hash)
 	}
 
-	// Log txs
-	log.Info("------------------------------------------")
-	log.Info("Mining txs list:")
-	for _, tx := range work.txs {
-		log.Info("TX", "hash", tx.Hash(), "gas price", tx.GasPrice())
-	}
-	log.Info("------------------------------------------")
+	// Log top tx
+	log.Info("Top tx", "hash", work.txs[0].Hash(), "gas price", work.txs[0].GasPrice())
 
 	// Create the new block to seal with the consensus engine
 	if work.Block, err = self.engine.Finalize(self.chain, header, work.state, work.txs, uncles, work.receipts); err != nil {
