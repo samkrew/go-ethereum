@@ -481,9 +481,7 @@ func (self *worker) commitNewWork() {
 	log.Info("------------------------------------------")
 	log.Info("Mining txs list:")
 	for _, tx := range work.txs {
-		log.Info("Hash:", tx.Hash())
-		log.Info("Gas price:", tx.GasPrice())
-		log.Info("----")
+		log.Info("TX", "hash", tx.Hash(), "gas price", tx.GasPrice())
 	}
 	log.Info("------------------------------------------")
 
