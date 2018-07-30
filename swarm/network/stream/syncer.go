@@ -22,9 +22,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/swarm/log"
-	"github.com/ethereum/go-ethereum/swarm/storage"
+	"github.com/samkrew/go-ethereum/metrics"
+	"github.com/samkrew/go-ethereum/swarm/log"
+	"github.com/samkrew/go-ethereum/swarm/storage"
 )
 
 const (

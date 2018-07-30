@@ -24,12 +24,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/samkrew/go-ethereum/common"
+	"github.com/samkrew/go-ethereum/common/hexutil"
+	"github.com/samkrew/go-ethereum/crypto"
+	"github.com/samkrew/go-ethereum/log"
+	"github.com/samkrew/go-ethereum/p2p/discover"
+	"github.com/samkrew/go-ethereum/rpc"
 )
 
 // List of errors

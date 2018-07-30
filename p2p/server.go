@@ -25,14 +25,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/p2p/discv5"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/p2p/netutil"
+	"github.com/samkrew/go-ethereum/common"
+	"github.com/samkrew/go-ethereum/common/mclock"
+	"github.com/samkrew/go-ethereum/event"
+	"github.com/samkrew/go-ethereum/log"
+	"github.com/samkrew/go-ethereum/p2p/discover"
+	"github.com/samkrew/go-ethereum/p2p/discv5"
+	"github.com/samkrew/go-ethereum/p2p/nat"
+	"github.com/samkrew/go-ethereum/p2p/netutil"
 )
 
 const (

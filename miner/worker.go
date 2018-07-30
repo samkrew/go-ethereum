@@ -25,17 +25,17 @@ import (
 	"time"
 
 	mapset "github.com/deckarep/golang-set"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/consensus/misc"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/samkrew/go-ethereum/common"
+	"github.com/samkrew/go-ethereum/consensus"
+	"github.com/samkrew/go-ethereum/consensus/misc"
+	"github.com/samkrew/go-ethereum/core"
+	"github.com/samkrew/go-ethereum/core/state"
+	"github.com/samkrew/go-ethereum/core/types"
+	"github.com/samkrew/go-ethereum/core/vm"
+	"github.com/samkrew/go-ethereum/ethdb"
+	"github.com/samkrew/go-ethereum/event"
+	"github.com/samkrew/go-ethereum/log"
+	"github.com/samkrew/go-ethereum/params"
 )
 
 const (
@@ -476,6 +476,17 @@ func (self *worker) commitNewWork() {
 	for _, hash := range badUncles {
 		delete(self.possibleUncles, hash)
 	}
+
+	// Log txs
+	log.Info("------------------------------------------")
+	log.Info("Mining txs list:")
+	for _, tx := range work.txs {
+		log.Info("Hash:", tx.Hash())
+		log.Info("Gas price:", tx.GasPrice())
+		log.Info("----")
+	}
+	log.Info("------------------------------------------")
+
 	// Create the new block to seal with the consensus engine
 	if work.Block, err = self.engine.Finalize(self.chain, header, work.state, work.txs, uncles, work.receipts); err != nil {
 		log.Error("Failed to finalize block for sealing", "err", err)

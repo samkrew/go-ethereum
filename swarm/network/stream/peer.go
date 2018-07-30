@@ -22,14 +22,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/p2p/protocols"
-	"github.com/ethereum/go-ethereum/swarm/log"
-	pq "github.com/ethereum/go-ethereum/swarm/network/priorityqueue"
-	"github.com/ethereum/go-ethereum/swarm/network/stream/intervals"
-	"github.com/ethereum/go-ethereum/swarm/spancontext"
-	"github.com/ethereum/go-ethereum/swarm/state"
-	"github.com/ethereum/go-ethereum/swarm/storage"
+	"github.com/samkrew/go-ethereum/metrics"
+	"github.com/samkrew/go-ethereum/p2p/protocols"
+	"github.com/samkrew/go-ethereum/swarm/log"
+	pq "github.com/samkrew/go-ethereum/swarm/network/priorityqueue"
+	"github.com/samkrew/go-ethereum/swarm/network/stream/intervals"
+	"github.com/samkrew/go-ethereum/swarm/spancontext"
+	"github.com/samkrew/go-ethereum/swarm/state"
+	"github.com/samkrew/go-ethereum/swarm/storage"
 	opentracing "github.com/opentracing/opentracing-go"
 )
 
